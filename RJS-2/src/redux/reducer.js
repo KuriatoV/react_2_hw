@@ -22,6 +22,12 @@ switch(action.type)
             return list.id!== action.id})
     })
 
+   case 'SEARCH_USER':
+   return Object.assign({},state,{
+        list_users: state.list_users.filter((list)=> {
+            return list.uName.indexOf(action.uName)!== -1})
+    })
+
 
 	default:return state;
 }	
